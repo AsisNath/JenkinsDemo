@@ -13,4 +13,13 @@ class SquareTestCase(unittest.TestCase):
         self.assertEqual(square(0), 0)
 
 if __name__ == '__main__':
-    unittest.main()
+    # Run the tests and collect the results
+    test_suite = unittest.TestLoader().loadTestsFromTestCase(SquareTestCase)
+    test_result = unittest.TextTestRunner().run(test_suite)
+
+    # Print the number of tests that passed and failed
+    passed = len(test_result.successes)
+    failed = len(test_result.failures)
+    print(f"Tests passed: {passed}")
+    print(f"Tests failed: {failed}")
+
