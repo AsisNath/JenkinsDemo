@@ -1,3 +1,5 @@
+from your_python_file import square
+
 import unittest
 
 class SquareTestCase(unittest.TestCase):
