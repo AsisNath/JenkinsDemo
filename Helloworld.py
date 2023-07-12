@@ -1,2 +1,3 @@
-print('Hello, world!')
+def square(n):
+    return n ** 2
 
