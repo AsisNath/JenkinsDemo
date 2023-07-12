@@ -15,11 +15,14 @@ class SquareTestCase(unittest.TestCase):
 if __name__ == '__main__':
     # Run the tests and collect the results
     test_suite = unittest.TestLoader().loadTestsFromTestCase(SquareTestCase)
-    test_result = unittest.TextTestRunner().run(test_suite)
+    test_runner = unittest.TextTestRunner()
+    test_result = test_runner.run(test_suite)
+
+    # Count the number of tests that passed and failed
+    passed = len(test_result.result.failures) == 0
+    failed = len(test_result.result.failures)
 
     # Print the number of tests that passed and failed
-    passed = len(test_result.successes)
-    failed = len(test_result.failures)
     print(f"Tests passed: {passed}")
     print(f"Tests failed: {failed}")
 
