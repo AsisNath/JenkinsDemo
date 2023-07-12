@@ -19,10 +19,11 @@ if __name__ == '__main__':
     test_result = test_runner.run(test_suite)
 
     # Count the number of tests that passed and failed
-    passed = len(test_result.result.failures) == 0
-    failed = len(test_result.result.failures)
+    passed = test_result.wasSuccessful()
+    failed = len(test_result.errors) + len(test_result.failures)
 
     # Print the number of tests that passed and failed
     print(f"Tests passed: {passed}")
     print(f"Tests failed: {failed}")
+
 
